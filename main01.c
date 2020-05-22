@@ -20,13 +20,13 @@ int main(int argc, char **argv)
 	{
 		switch( res_read )
 		{
-			case -1:
+			case LIST_ERR_OPEN:
 				fprintf(stderr, "Can not open file %s!\n", argv[1]);
 				break;
-			case -2:
+			case LIST_ERR_READ:
 				fprintf(stderr, "Can not read element from %s!\n", argv[1]);
 				break;
-			case -3:
+			case LIST_ERR_MEMORY:
 				fprintf(stderr, "Can not allocate memory!\n");
 				break;
 			default:

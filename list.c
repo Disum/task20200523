@@ -4,14 +4,6 @@
 #include "list.h"
 #define LEN 4096
 
-enum LIST_RETURN_CODES
-{
-	LIST_SUCCESS = 0,
-	LIST_ERR_OPEN = -1,
-	LIST_ERR_READ = -2,
-	LIST_ERR_MEMORY = -3
-};
-
 int  read_list(char *name, list **p_head)
 {
 	FILE *file;
@@ -113,8 +105,9 @@ int  read_list(char *name, list **p_head)
 void print_list(list *head)
 {
 	list *curr;
+	int count;
 
-	for( curr = head; curr; curr = curr->next )
+	for( curr = head, count = 0; curr && count<12; curr = curr->next, count++ )
 		printf("%s\n", curr->string);
 }
 
