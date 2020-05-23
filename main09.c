@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <time.h>
 #include "list.h"
-#include "solve08.h"
+#include "solve09.h"
 
 int main(int argc, char **argv)
 {
@@ -37,7 +37,7 @@ int main(int argc, char **argv)
 	print_list(head);
 
 	t_beg = clock();
-	new_head = solve08(head);
+	new_head = solve09(head);
 	printf("Answer: \n");
 	print_list(new_head);
 	delete_list(new_head);

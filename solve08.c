@@ -4,8 +4,12 @@
 
 list *solve08(list *head)
 {
-	list *gap, *old_tail = head, *tail = old_tail->next, *curr = tail->next;
+	list *gap, *old_tail, *tail, *curr;
 
+	old_tail = head;
+	if( !(tail = old_tail->next) )
+		return head;
+	curr = tail->next;
 	if( strcmp(old_tail->string, tail->string)>=0 )
 	{
 		for( ; curr; old_tail = tail, tail = curr, curr = curr->next )
