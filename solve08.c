@@ -21,7 +21,12 @@ list *solve08(list *head)
 		head = tail;
 	}
 
-	for( old_tail = head, tail = old_tail->next, curr = tail->next; curr; old_tail = tail, tail = curr, curr = curr->next )
+	old_tail = head;
+	if( !(tail = old_tail->next) )
+		return head;
+	curr = tail->next;
+
+	for( ; curr; old_tail = tail, tail = curr, curr = curr->next )
 	{
 		if( strcmp(tail->string, curr->string)>=0 )
 		{

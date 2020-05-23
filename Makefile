@@ -1,6 +1,6 @@
-FLAGS = -g -W -Wall -Wunused -Wcast-align -Werror -pedantic -pedantic-errors -fstack-protector-all -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wcast-align -Wno-long-long -Wmissing-declarations -O3
+FLAGS = -W -Wall -Wunused -Wcast-align -Werror -pedantic -pedantic-errors -fstack-protector-all -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wcast-align -Wno-long-long -Wmissing-declarations -O3
 
-all: a01.out a02.out a03.out a04.out a05.out a08.out a09.out
+all: a01.out a02.out a03.out a04.out a05.out a06.out a07.out a08.out a09.out a10.out
 
 list.o: list.c
 	gcc -c $(FLAGS) list.c -o list.o
@@ -47,6 +47,13 @@ main06.o: main06.c
 solve06.o: solve06.c
 	gcc -c $(FLAGS) solve06.c -o solve06.o
 
+a07.out: main07.o solve07.o list.o
+	gcc $(FLAGS) main07.o solve07.o list.o -o a07.out
+main07.o: main07.c
+	gcc -c $(FLAGS) main07.c -o main07.o
+solve07.o: solve07.c
+	gcc -c $(FLAGS) solve07.c -o solve07.o
+
 a08.out: main08.o solve08.o list.o
 	gcc $(FLAGS) main08.o solve08.o list.o -o a08.out
 main08.o: main08.c
@@ -60,3 +67,10 @@ main09.o: main09.c
 	gcc -c $(FLAGS) main09.c -o main09.o
 solve09.o: solve09.c
 	gcc -c $(FLAGS) solve09.c -o solve09.o
+
+a10.out: main10.o solve10.o list.o
+	gcc $(FLAGS) main10.o solve10.o list.o -o a10.out
+main10.o: main10.c
+	gcc -c $(FLAGS) main10.c -o main10.o
+solve10.o: solve10.c
+	gcc -c $(FLAGS) solve10.c -o solve10.o
